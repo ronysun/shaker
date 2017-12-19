@@ -1,0 +1,20 @@
+title: OpenStack L2 North-South network stability 
+
+description:
+    network stability
+
+deployment:
+  template: l2.hot
+  accommodation: [pair, density: 1]
+
+execution:
+  tests:
+  -
+    title: UDP
+    class: iperf3
+    udp: on
+    datagram_size: 32
+    bandwidth: 0
+    time: 60
+    sla:
+    - "[type == 'agent'] >> (stats.loss.avg < 2)"

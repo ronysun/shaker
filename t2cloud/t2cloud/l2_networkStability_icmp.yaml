@@ -1,0 +1,18 @@
+title: OpenStack L2  network stability ping
+
+description:
+    network stability  ping
+
+deployment:
+  template: l2.hot
+  accommodation: [pair, density: 1]
+
+execution:
+  tests:
+  -
+    title: ping
+    class: flent
+    method: ping
+    time: 
+    sla:
+    - "[type == 'agent'] >> (stats.ping_icmp.avg < 2.0)"

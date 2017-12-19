@@ -1,0 +1,23 @@
+title: OpenStack L3 North-South network stability 
+
+description:
+  In this scenario Shaker launches 1 pair of instances on different compute
+  nodes. Instances are in different networks connected to different routers,
+  master accesses slave by floating ip. The traffic goes from one network
+  via external network to the other network.
+
+deployment:
+  template: l3_north_south.hot
+  accommodation: [pair, density: 4]
+
+execution:
+  tests:
+  -
+    title: UDP
+    class: iperf3
+    udp: on
+    bandwidth: 1M
+    datagram_size: 32
+    time: 60
+    sla:
+    - "[type == 'agent'] >> (stats.packets.avg > 100000)"
