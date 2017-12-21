@@ -1,0 +1,9 @@
+export OS_USERNAME=shaker
+export OS_PASSWORD=1q2w3e
+export OS_PROJECT_NAME=sln@s.com
+export OS_USER_DOMAIN_NAME=sln@s.com
+export OS_PROJECT_DOMAIN_NAME=sln@s.com
+export OS_AUTH_URL=http://192.168.104.104:35357/v3
+export OS_REGION_NAME=BJPOC-REGION1
+export OS_IDENTITY_API_VERSION=3
+export PYTHONIOENCODING=utf-8
